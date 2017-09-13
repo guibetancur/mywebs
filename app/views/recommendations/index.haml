@@ -1,0 +1,14 @@
+%h1 Mi Web
+%table
+   %tr
+      %th Dirección
+      %th Nombre
+      %th Descripcion
+      %th Privada
+   - @recommendations.each do |recommendation|
+      %tr
+         %td= recommendation.url
+         %td= link_to recommendation.name, recommendation.url, target: '_blank'
+         %td= recommendation.description
+         %td= recommendation.private
+= link_to 'Nueva recomendación', new_category_subcategory_recommendation_path

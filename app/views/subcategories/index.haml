@@ -1,0 +1,11 @@
+%h1 Sub-Categorías
+%table
+   %tr
+      %th Nombre
+      %th Descripcion
+   - @subcategories.each do |subcategory|
+      %tr
+         %td= subcategory.name
+         %td= subcategory.description
+         %td= link_to 'Recomendadas', category_subcategory_recommendations_path(@category, subcategory)
+= link_to 'Nueva subcategoría', new_category_subcategory_path
